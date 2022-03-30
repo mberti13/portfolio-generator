@@ -1,36 +1,25 @@
-//
+//Needed to create files in Node.js
 const fs = require('fs');
+
+//Imports page-template.js into app.js(generatePage function)
+const generatePage = require("./src/page-template.js");
+
 //Create and Slice Array for basic user information
-const profileDataArgs = process.argv.slice(2, process.argv.length);
+const profileDataArgs = process.argv.slice(2);
 
 // const name = profileDataArgs[0];
 // const github = profileDataArgs[1];
-//this does the same thing
+//THIS DOES SAME THING
 const [name, github] = profileDataArgs;
 
-const generatePage = (name, github) =>{
-    return`
-    <!DOCTYPE html> 
-  <html lang="en"> 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio Demo</title>
-  </head>
-
-  <body>
-  <h1>${name}</h1>
-  <h2><a href="https://github.com/${github}">Github</a></h2>
-  </body>
-  </html>
-    `;
-};
-fs.writeFile('index.html', generatePage(name,github), err =>{
-    if(err) throw err;
+//function to generate HTML page
+fs.writeFile('./index.html', generatePage(name,github), err =>{
+    if(err) throw new Error(err);
     
     console.log("Portfolio complete! Check out index.html to see the output!");
 })
+
+
 
 // CONSOLE LOGS INPUTS AFTER RUNNING IN NODE
 // //Display input data
