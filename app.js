@@ -1,3 +1,5 @@
+//
+const fs = require('fs');
 //Create and Slice Array for basic user information
 const profileDataArgs = process.argv.slice(2, process.argv.length);
 
@@ -24,8 +26,11 @@ const generatePage = (name, github) =>{
   </html>
     `;
 };
-console.log(name, github);
-console.log(generatePage(name, github));
+fs.writeFile('index.html', generatePage(name,github), err =>{
+    if(err) throw err;
+    
+    console.log("Portfolio complete! Check out index.html to see the output!");
+})
 
 // CONSOLE LOGS INPUTS AFTER RUNNING IN NODE
 // //Display input data
