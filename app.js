@@ -58,6 +58,7 @@ const mockData = {
     github: 'lernantino',
     confirmAbout: true,
     about: 'Duis consectetur nunc nunc. Morbi finibus non sapien nec pharetra. Fusce nec dignissim orci, ac interdum ipsum. Morbi mattis justo sed commodo pellentesque. Nulla eget fringilla nulla. Integer gravida magna mi, id efficitur metus tempus et.',
+
     projects: [
         {
             name: 'Run Buddy',
@@ -186,11 +187,11 @@ const pageHTML = generatePage(mockData);
 //     const pageHTML = generatePage(portfolioData);
 
 //     //function to generate HTML page
-//     // fs.writeFile('./index.html', pageHTML, err =>{
-//     //   if(err) throw err;
+    fs.writeFile('./index.html', pageHTML, err =>{
+      if(err) throw err;
     
-//     //   console.log("Portfolio complete! Check out index.html to see the output!");
-//     // })
+      console.log("Portfolio complete! Check out index.html to see the output!");
+    })
 //     })
 
 // 
