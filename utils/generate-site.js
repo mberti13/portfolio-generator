@@ -32,3 +32,10 @@ const copyFile = () =>{
         });
     });
 };
+
+module.exports = {writeFile , copyFile};
+//SAME AS
+// module.exports = {
+//     writeFile: writeFile,
+//     copyFile: copyFile
+// };

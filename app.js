@@ -1,6 +1,13 @@
 const inquirer = require('inquirer');
+
+const {writeFile , copyFile} = require('./utils/generate-site.js');
+
+// const generateSite = require('./utils/generate-site.js');
+
 //Needed to create files in Node.js
-const fs = require('fs');
+// const fs = require('fs');
+
+
 //Imports page-template.js into app.js(generatePage function)
 const generatePage = require("./src/page-template");
 
